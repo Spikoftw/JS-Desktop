@@ -1,20 +1,8 @@
-import React, { useState, useEffect } from "react";
-import WeatherService from "../services/weather.service";
+import React from "react";
+import useWeather from "../hooks/useWeather"; // Assurez-vous que le chemin est correct
 
 const Weather = ({ show, ville }) => {
-  const [weatherData, setWeatherData] = useState(null);
-
-  useEffect(() => {
-    const updateWeather = () => {
-      WeatherService.getWeather(ville).then((data) => setWeatherData(data));
-    };
-
-    if (show) {
-      const weatherInterval = setInterval(updateWeather, 1800000);
-      updateWeather();
-      return () => clearInterval(weatherInterval);
-    }
-  }, [show, ville]);
+  const weatherData = useWeather(ville, show);
 
   if (!show) return null;
 
@@ -22,13 +10,15 @@ const Weather = ({ show, ville }) => {
     <div className="weather">
       <h1 className="Meteo-title">Météo</h1>
       <div id="weather-widget">
-        {weatherData && (
+        {weatherData ? (
           <>
             <p>
               {weatherData.location}: {weatherData.temperature}°C
             </p>
             <p>{weatherData.description}</p>
           </>
+        ) : (
+          <p>Chargement...</p>
         )}
       </div>
     </div>
