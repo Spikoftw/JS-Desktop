@@ -1,0 +1,323 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: #4a90e2;
+}
+
+.desktop {
+  position: relative;
+  height: calc(100% - 40px);
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.icon {
+  width: 90px;
+  text-align: center;
+  margin: 15px;
+  color: white;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.icon-image {
+  width: 48px;
+  height: 48px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.icon-image.computer {
+  color: #0078d7;
+}
+
+.icon-image.documents {
+  color: #33cc33;
+}
+
+.icon-image.recycle-bin {
+  color: #cc3333;
+}
+
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.start-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+  background-color: #0078d7;
+  margin: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.taskbar-icons {
+  display: flex;
+  align-items: center;
+}
+
+.taskbar-icon {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.taskbar-icon.folder {
+  background-color: #f0c674;
+}
+
+.taskbar-icon.explorer {
+  background-color: #0078d7;
+}
+
+.system-tray {
+  display: flex;
+  align-items: center;
+}
+
+.notification {
+  width: 20px;
+  height: 20px;
+  background-color: #ffcc00;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.datetime {
+  color: white;
+  margin: 0 10px;
+  text-align: right;
+}
+
+.clock {
+  font-size: 14px;
+}
+
+.date {
+  font-size: 12px;
+}
+
+.cross-icon {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  color: black;
+  text-align: center;
+  margin: 0;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.cross-icon:hover {
+  cursor: pointer;
+}
+
+.start-menu {
+  /* display: none; */
+  position: fixed;
+  bottom: 40px;
+  left: 10px;
+  width: 300px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.start-menu-header {
+  background-color: #0078d7;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.start-menu-content {
+  padding: 10px;
+}
+
+.start-menu-item {
+  display: block;
+  padding: 5px;
+  margin: 5px 0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.start-menu-item:hover {
+  background-color: #0078d7;
+  color: white;
+}
+
+.parametres {
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+  width: 400px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.parametres-content {
+  padding: 10px;
+}
+
+.parametres-header {
+  background-color: #0078d7;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.parametres-items {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ccc;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px gray;
+  margin: 10px 0 10px 0;
+}
+
+.items-title {
+  display: flex;
+  padding: 5px;
+  margin: 5px 0;
+  color: black;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.background-colors-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  margin: auto;
+}
+
+.red {
+  background-color: #a82222;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  height: 5px;
+  width: 5px;
+  display: block;
+  border: 1px black solid;
+}
+
+.blue {
+  background-color: #4a90e2;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  height: 5px;
+  width: 5px;
+  display: block;
+  border: 1px black solid;
+}
+
+.white {
+  background-color: #abab9a;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  height: 5px;
+  width: 5px;
+  display: block;
+  border: 1px black solid;
+}
+
+.gray {
+  background-color: gray;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  height: 5px;
+  width: 5px;
+  display: block;
+  border: 1px black solid;
+}
+
+.purple {
+  background-color: purple;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  height: 5px;
+  width: 5px;
+  display: block;
+  border: 1px black solid;
+}
+
+#weather-widget {
+  padding: 0 10px 0 10px;
+}
+
+.Meteo-title {
+  background-color: #333;
+  color: white;
+  margin: 0;
+  border-radius: 5px 5px 0 0;
+  padding: 5px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.weather {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: block;
+  background-color: beige;
+  border-radius: 10px;
+  width: 100px;
+}
+
+.form-widget-meteo {
+  /* display: none; */
+  flex-direction: row;
+  justify-content: space-around;
+  color: black;
+}
+
+.form-widget-error {
+  display: none;
+  color: red;
+}

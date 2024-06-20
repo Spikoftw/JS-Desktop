@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./css/styles.css";
+import Weather from "./components/Weather";
+import Desktop from "./components/Desktop";
+import Taskbar from "./components/Taskbar";
+import StartMenu from "./components/StartMenu";
+import Parametres from "./components/Parametres";
 
-function App() {
+const App = () => {
+  const [showStartMenu, setShowStartMenu] = useState(false);
+  const [showParams, setShowParams] = useState(false);
+  const [showWeatherWidget, setShowWeatherWidget] = useState(false);
+  const [ville, setVille] = useState("Paris");
+
+  const handleStartButtonClick = (event) => {
+    event.preventDefault();
+    setShowStartMenu(!showStartMenu);
+  };
+
+  const handleParamButtonClick = () => {
+    setShowParams(true);
+    setShowStartMenu(false);
+  };
+
+  const handleCloseParams = () => {
+    setShowParams(false);
+  };
+
+  const handleCheckbox = () => {
+    setShowWeatherWidget(!showWeatherWidget);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Weather ville={ville} show={showWeatherWidget} />
+      <Desktop />
+      <Taskbar onStartButtonClick={handleStartButtonClick} />
+      <StartMenu
+        show={showStartMenu}
+        onParamButtonClick={handleParamButtonClick}
+      />
+      <Parametres
+        updateVille={(ville) => {
+          setVille(ville);
+        }}
+        show={showParams}
+        showForm={showWeatherWidget}
+        onClose={handleCloseParams}
+        onCheckboxClick={handleCheckbox}
+      />
     </div>
   );
-}
+};
 
 export default App;
