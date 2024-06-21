@@ -6,8 +6,8 @@ import {
   faRecycle,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Desktop = ({ onDekstopClick }) => (
-  <div onClick={onDekstopClick} className="desktop" id="desktop">
+const Desktop = () => (
+  <div className="desktop" id="desktop">
     <div className="icon">
       <FontAwesomeIcon icon={faDesktop} className="icon-image computer" />
       <span>Ordinateur</span>

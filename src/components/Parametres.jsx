@@ -1,4 +1,3 @@
-// import React from "react";
 import { useState } from "react";
 
 const Parametres = ({ show, updateVille, onClose, toggleWeather }) => {
@@ -81,6 +80,9 @@ const Parametres = ({ show, updateVille, onClose, toggleWeather }) => {
                   <input type="text" id="name" name="user_name" />
                 </div>
                 <div className="button">
+                  <p className="formErrorMessage">
+                    Le nom de ville est invalide.
+                  </p>
                   <button type="submit">Valider</button>
                 </div>
               </form>

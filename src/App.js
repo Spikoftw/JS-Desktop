@@ -37,7 +37,7 @@ const App = () => {
   return (
     <div>
       <Weather ville={ville} show={showWeatherWidget} />
-      <Desktop onDekstopClick={handleCloseStartMenu} />
+      <Desktop />
       <Taskbar onStartButtonClick={handleStartButtonClick} />
       <StartMenu
         show={showStartMenu}
