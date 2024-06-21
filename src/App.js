@@ -17,6 +17,10 @@ const App = () => {
     setShowStartMenu(!showStartMenu);
   };
 
+  const handleCloseStartMenu = () => {
+    setShowStartMenu(false);
+  };
+
   const handleParamButtonClick = () => {
     setShowParams(true);
     setShowStartMenu(false);
@@ -33,11 +37,12 @@ const App = () => {
   return (
     <div>
       <Weather ville={ville} show={showWeatherWidget} />
-      <Desktop />
+      <Desktop onDekstopClick={handleCloseStartMenu} />
       <Taskbar onStartButtonClick={handleStartButtonClick} />
       <StartMenu
         show={showStartMenu}
         onParamButtonClick={handleParamButtonClick}
+        onClose={handleCloseStartMenu}
       />
       <Parametres
         updateVille={(ville) => {
