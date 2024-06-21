@@ -21,14 +21,14 @@ const Taskbar = ({ onStartButtonClick }) => {
 
   return (
     <div className="taskbar">
-      <a
+      <button
         href="#"
         className="start-button"
         id="startButton"
         onClick={onStartButtonClick}
       >
         <span>Démarrer</span>
-      </a>
+      </button>
       <div className="taskbar-icons">
         <div className="taskbar-icon folder"></div>
         <div className="taskbar-icon explorer"></div>

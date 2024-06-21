@@ -35,31 +35,31 @@ const Parametres = ({ show, updateVille, onClose, toggleWeather }) => {
             Changer la couleur d'arrière plan du bureau
           </p>
           <div className="background-colors-list">
-            <a
+            <button
               href="#"
               className="background-color-choice red"
               onClick={() => handleBackgroundColorChoice("#a82222")}
-            ></a>
-            <a
+            ></button>
+            <button
               href="#"
               className="background-color-choice blue"
               onClick={() => handleBackgroundColorChoice("#4a90e2")}
-            ></a>
-            <a
+            ></button>
+            <button
               href="#"
               className="background-color-choice white"
               onClick={() => handleBackgroundColorChoice("#abab9a")}
-            ></a>
-            <a
+            ></button>
+            <button
               href="#"
               className="background-color-choice gray"
               onClick={() => handleBackgroundColorChoice("gray")}
-            ></a>
-            <a
+            ></button>
+            <button
               href="#"
               className="background-color-choice purple"
               onClick={() => handleBackgroundColorChoice("purple")}
-            ></a>
+            ></button>
           </div>
         </div>
         <div className="parametres-items widgets">

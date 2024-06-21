@@ -11,7 +11,6 @@ const App = () => {
   const [showParams, setShowParams] = useState(false);
   const [showWeatherWidget, setShowWeatherWidget] = useState(false);
   const [ville, setVille] = useState("Paris");
-  const [weatherChecked, setWeatherChecked] = useState(false);
 
   const handleStartButtonClick = (event) => {
     event.preventDefault();
@@ -48,7 +47,6 @@ const App = () => {
         showForm={showWeatherWidget}
         onClose={handleCloseParams}
         onCheckboxClick={handleCheckbox}
-        weatherChecked={weatherChecked}
         toggleWeather={handleCheckbox}
       />
     </div>
