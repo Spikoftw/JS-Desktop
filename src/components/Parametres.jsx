@@ -1,12 +1,14 @@
-import React from "react";
+// import React from "react";
+import { useState } from "react";
 
-const Parametres = ({
-  show,
-  showForm,
-  updateVille,
-  onClose,
-  onCheckboxClick,
-}) => {
+const Parametres = ({ show, updateVille, onClose, toggleWeather }) => {
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = () => {
+    setChecked(!checked);
+    toggleWeather();
+  };
+
   const handleBackgroundColorChoice = (color) => {
     document.body.style.backgroundColor = color;
   };
@@ -66,9 +68,13 @@ const Parametres = ({
           </p>
           <div className="widget-meteo">
             <p className="items-title arriereplan-menu-title">
-              <Checkbox label="Widget Météo" onChange={onCheckboxClick} />
+              <Checkbox
+                label="Widget Météo"
+                value={checked}
+                onChange={handleChange}
+              />
             </p>
-            {showForm && (
+            {checked && (
               <form className="form-widget-meteo" onSubmit={handleFormSubmit}>
                 <div>
                   <label htmlFor="name">Ville&nbsp;:</label>
@@ -86,11 +92,11 @@ const Parametres = ({
   );
 };
 
-const Checkbox = ({ label, onChange }) => {
+const Checkbox = ({ label, value, onChange }) => {
   return (
     <label>
+      <input type="checkbox" checked={value} onChange={onChange} />
       {label}
-      <input type="checkbox" onChange={onChange} />
     </label>
   );
 };
